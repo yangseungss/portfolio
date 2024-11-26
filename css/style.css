@@ -200,9 +200,9 @@ body {
 /* 가상요소 */
 .portfolio_inner a figure::before {
     content: '';
-    width: 60px;
-    height: 3px;
-    background: #440063;
+    width: 10%;
+    height: 5px;
+    background: #666;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -213,9 +213,9 @@ body {
 
 .portfolio_inner a figure::after {
     content: '';
-    width: 2px;
-    height: 60px;
-    background: #440063;
+    width: 5px;
+    height: 10%;
+    background: #666;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -245,22 +245,23 @@ body {
     border-radius: 20px;
 }
 
-.portfolio_inner a figure figcaption p:first-child {
-    font-size: 32px;
+.portfolio_inner a figure figcaption .s_txet {
+    font-size: 30px;
     margin-bottom: 5px;
     margin-left: 5%;
-    margin-top: 55%;
+    margin-top: 45%;
 }
 
-.portfolio_inner a figure figcaption p:nth-child(2) {
-    font-size: 30px;
+.portfolio_inner a figure figcaption .fig_text {
+    font-size: 28px;
     margin-left: 5%;
+    margin-bottom: 7px;
 }
 
 
 /* hover 효과 */
 .portfolio_inner a:hover figure figcaption {
-    background: #9393939f;
+    background: #4646469f;
     opacity: 1;
     transition: all 0.5s;
 }
@@ -276,7 +277,7 @@ body {
     opacity: 0;
     transition: all 0.5s;
 }
- 
+
 
 
 /* about_warp */
@@ -453,6 +454,8 @@ body {
 }
 
 
+
+/* 미디어 쿼리 */
 @media (max-width:1160px) {
 
     .header_inner {
@@ -485,6 +488,8 @@ body {
 
     .me_img .me_img_bg {
         margin-top: 40px;
+        width: 400px;
+        height: 450px;
     }
 
     .about_item {
@@ -500,6 +505,18 @@ body {
     .text {
         font-weight: 300;
     }
+
+    .portfolio_inner a figure figcaption .s_txet {
+        font-size: 26px;
+
+
+    }
+
+    .portfolio_inner a figure figcaption .fig_text {
+        font-size: 24px;
+
+    }
+
 
 }
 
@@ -522,8 +539,22 @@ body {
         font-size: 60px;
     }
 
+
+    .portfolio_inner a figure figcaption .s_txet {
+        font-size: 22px;
+        margin-top: 40%;
+
+    }
+
+    .portfolio_inner a figure figcaption .fig_text {
+        font-size: 20px;
+
+    }
+
     .me_img .me_img_bg {
         margin-top: 40px;
+        width: 300px;
+        height: 300px;
     }
 
     .about_bottom ul li {
@@ -563,6 +594,19 @@ body {
     .sub_txt_box .sub_text {
         height: 70px;
         font-size: 28px;
+    }
+
+    .portfolio_inner a figure figcaption .s_txet {
+        font-size: 14px;
+        margin-top: 35%;
+        font-weight: 300;
+
+    }
+
+    .portfolio_inner a figure figcaption .fig_text {
+        font-size: 12px;
+        font-weight: 100;
+        margin-bottom: 2-px;
     }
 
 
@@ -605,4 +649,9 @@ body {
         font-size: 20px;
     }
 
+    .me_img .me_img_bg {
+        width: 250px;
+        height: 250px;
+
+    }
 }
