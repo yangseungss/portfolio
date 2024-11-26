@@ -507,14 +507,12 @@ body {
     }
 
     .portfolio_inner a figure figcaption .s_txet {
-        font-size: 26px;
-
-
+        font-size: 24px;
+        margin-top: 40%;
     }
 
     .portfolio_inner a figure figcaption .fig_text {
-        font-size: 24px;
-
+        font-size: 22px;
     }
 
 
@@ -541,13 +539,14 @@ body {
 
 
     .portfolio_inner a figure figcaption .s_txet {
-        font-size: 22px;
-        margin-top: 40%;
+        font-size: 18px;
+        margin-top: 28%;
 
     }
 
     .portfolio_inner a figure figcaption .fig_text {
-        font-size: 20px;
+        font-size: 16px;
+        font-weight: 100;
 
     }
 
@@ -598,7 +597,7 @@ body {
 
     .portfolio_inner a figure figcaption .s_txet {
         font-size: 14px;
-        margin-top: 35%;
+        margin-top: 30%;
         font-weight: 300;
 
     }
@@ -606,7 +605,6 @@ body {
     .portfolio_inner a figure figcaption .fig_text {
         font-size: 12px;
         font-weight: 100;
-        margin-bottom: 2-px;
     }
 
 
@@ -653,5 +651,17 @@ body {
         width: 250px;
         height: 250px;
 
+    }
+
+    /* 가상요소 */
+    .portfolio_inner a figure::before {
+        content: '';
+        width: 20%;
+        height: 1px;
+    }
+
+    .portfolio_inner a figure::after {
+        width: 1px;
+        height: 20%;
     }
 }
