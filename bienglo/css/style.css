@@ -1,0 +1,484 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* font-family: 'Cormorant', serif; 
+font-family: 'Noto Sans', serif;
+font-family: 'Pretendard-Regular';*/
+
+
+body {
+    font-family: 'Pretendard-Regular', 'Cormorant', 'Noto Sans', serif;
+}
+
+/* common */
+.blind {
+    width: 0;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+    position: absolute;
+    text-indent: -99999px;
+}
+
+
+
+/* 전체 */
+#wrap {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+}
+
+
+/* 헤더 */
+#header {
+    width: 100%;
+    margin: auto;
+    position: relative;
+}
+
+.header-inner {
+    width: 100%;
+    height: 100px;
+    margin: auto;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.logo {
+    width: 20%;
+    height: 100px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+
+
+/* 메뉴 */
+.nav {
+    width: 80%;
+    height: 100px;
+    display: flex;
+    box-sizing: border-box;
+}
+
+
+/* 메뉴, 서브메뉴 */
+/* 가상요소에 높이값을 없애줬다가 .on을 붙이면 
+        height: 171px;나타나게한다.*/
+#header::after {
+    content: '';
+    width: 100%;
+    height: 0px;
+    background: #fafafa;
+    position: absolute;
+    left: 0;
+    top: 91px;
+    z-index: 100;
+    transition: all 400ms;
+}
+
+/* .on이 붙으면 heigth값을 늘려줘라 html에 가서 on클래스 붙여주기
+             css 셋팅하고 제이쿼리연결  */
+
+#header.on::after {
+    height: 240px
+}
+
+.nav {
+    z-index: 1000;
+}
+
+
+.nav>ul {
+    display: flex;
+    justify-content: left;
+    margin-top: 30px;
+}
+
+.nav>ul>li {
+    position: relative;
+}
+
+.nav>ul>li>a {
+    display: inline-block;
+    padding: 10px 50px;
+    box-sizing: border-box;
+}
+
+/* .nav>ul>li>a:hover {} */
+
+.nav>ul>li>ul {
+    position: absolute;
+    top: 70px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    /* 자리잡아주고 끄기 */
+    /* background-color: #575757;     */
+    display: none;
+}
+
+.nav>ul>li>ul>li>a {
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.nav>ul>li>ul>li>a:hover {
+    text-decoration: underline;
+    text-decoration-color: #c7c7c7;
+}
+
+/* 자바스크립트용 css 메뉴에 마우스를 올리면 보이게 해주는 거 */
+.nav>ul>li>ul {
+    display: block;
+    height: 0;
+    overflow: hidden;
+    transition: all 400ms;
+}
+
+
+
+
+
+/* 소개 */
+
+.info {
+    width: 20%;
+}
+
+
+.info ul {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+}
+
+.info ul li:nth-child(2) {
+    margin: 0 20px;
+    position: relative;
+}
+
+.info ul li:nth-child(2)::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    right: -5px;
+    top: 42px;
+    position: absolute;
+    background: url(../image/icon_up-right.png) no-repeat center /cover;
+}
+
+
+.info ul li a {
+    display: inline-block;
+    padding: 40px 10px;
+}
+
+
+
+
+
+/* 홈화면 */
+
+.home-wrap {
+    width: 100%;
+    height: 820px;
+    box-sizing: border-box;
+    margin: auto;
+}
+
+
+
+
+/* 메인 전체 */
+
+.centent-wrap {
+    width: 100%;
+    box-sizing: border-box;
+    margin: auto;
+    padding-bottom: 100px;
+}
+
+
+
+/* 텍스트 효과 주기 */
+.sub-txt {
+    width: 100%;
+    height: 612px;
+    box-sizing: border-box;
+    margin: auto;
+    padding: 200px 0;
+    overflow: hidden;
+}
+
+.txt-box01 {
+    width: 1200px;
+    height: 106px;
+    box-sizing: border-box;
+    margin: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.font-sub01 {
+    font-family: 'Cormorant', serif;
+    font-size: 90px;
+    font-style: italic;
+}
+
+.font-sub02 {
+    font-size: 90px;
+    font-style: italic;
+    margin-left: 20px;
+}
+
+.txt-box02 {
+    width: 1200px;
+    height: 106px;
+    box-sizing: border-box;
+    margin: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.txt-box02>p {
+    display: inline-block;
+}
+
+
+
+
+/* 이미지 공통으로 스타일*/
+.sub-imgtxt01,
+.sub-imgtxt02 {
+    width: 100%;
+    height: 644px;
+    box-sizing: border-box;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.img-box {
+    width: 460px;
+    height: 644px;
+    border-radius: 20px;
+}
+
+
+
+/* 텍스트와, 이미지 */
+.imgtxt-box {
+    width: 620px;
+    height: 544px;
+    margin-top: 100px;
+}
+
+.img-subtxt01 {
+    font-size: 70px;
+    font-weight: 500;
+    font-family: 'Cormorant', serif;
+    margin-bottom: 20px;
+}
+
+.img-subtxt02 {
+    font-size: 24px;
+    font-weight: 300;
+    margin-left: 30px;
+    position: relative;
+    line-height: 1.8;
+}
+
+.img-subtxt02::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: -30px;
+    width: 10px;
+    height: 10px;
+    display: block;
+    border-radius: 20px;
+    background-color: black;
+}
+
+
+.box01 {
+    background: url(../image/main_about_img01.jpg) no-repeat center / cover;
+}
+
+.box02 {
+    background: url(../image/main_about_img02.jpg) no-repeat center / cover;
+}
+
+
+
+
+
+
+
+/* 제품영역 */
+.product {
+    width: 100%;
+}
+
+
+.p-title {
+    font-size: 70px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+
+
+
+
+/* 배너 */
+.banner {
+    width: 100%;
+    height: 536px;
+    margin: auto;
+    margin-top: 200px;
+    border-radius: 20px;
+    background: url(../image/main_contact_bg.jpg) no-repeat center / cover;
+
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-box {
+
+    text-align: center;
+}
+
+.banner-txt1 {
+    font-size: 46px;
+    margin-bottom: 40px;
+}
+
+.banner-txt2 {
+    font-size: 24px;
+    font-family: 'Cormorant', serif;
+}
+
+
+
+
+
+
+
+/* 푸터 */
+.footer-warp {
+    width: 100%;
+    height: 334px;
+    margin: auto;
+}
+
+.footer-inner {
+    width: 80%;
+    margin: auto;
+    padding-top: 100px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.footer-inner a {
+    display: block;
+    margin-bottom: 30px;
+}
+
+.f-strong {
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.footer-inner p {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.footer-inner ul li {
+    display: inline-block;
+    margin-right: 15px;
+    position: relative;
+}
+
+.footer-inner ul li::after {
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 10px;
+    top: 2px;
+    right: -8px;
+    background-color: #bebebe;
+}
+
+
+.f-right .f-right-inner {
+    margin-bottom: 20px;
+}
+
+/* 푸터 오른쪽 영역 */
+.f-right-inner span:first-child {
+    margin-right: 20px;
+}
+
+.f-right-icon {
+    text-align: right;
+}
+
+.f-right-icon a {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.fa-brands {
+    font-size: 20px;
+}
+
+
+
+#top-btn {
+    /* display: none; */
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 999;
+    background-color: rgb(23, 68, 9);
+    outline: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #ffffff;
+
+}

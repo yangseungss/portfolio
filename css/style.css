@@ -1,0 +1,779 @@
+/* fonts */
+@font-face {
+    font-family: 'GmarketSans';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansbold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+
+body {
+    position: relative;
+    font-family: 'GmarketSans', 'GmarketSansMedium', 'GmarketSansbold';
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* common */
+.blind {
+    width: 0;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+    position: absolute;
+    text-indent: -99999px;
+}
+
+
+
+#wrap {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* header */
+
+.header-wrap {
+    background-color: #fff;
+}
+
+.header-inner {
+    width: 90%;
+    height: 100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #fff;
+}
+
+
+/* 좌우 여백 10% 빼고 widht 배분 */
+.logo {
+    width: 10%;
+    padding: 10px;
+}
+
+.logo a {
+    display: grid;
+    place-content: center;
+    font-size: 30px;
+    font-weight: 900;
+    padding: 10px;
+}
+
+
+.gnb {
+    width: 90%;
+    height: 100px;
+}
+
+/* flex로 한번에 가로 세로 정렬이 안됨 추후 수정 */
+
+.gnb nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.gnb nav ul li {
+    text-align: center;
+    /* margin-top: 40px; */
+    /* 마진으로 수평 잡았으나 마우스오버 효과로 일단 감춤
+    지금은 마진을 없앴는데 가운데로 됨  */
+
+}
+
+.gnb nav ul li a {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 26px;
+    font-weight: bold;
+    padding: 40px 20px 20px 20px;
+    position: relative;
+}
+
+.gnb nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: 15px;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+    background-color: #333;
+
+}
+
+/* 가운데서 없어지는 효과로 바꾸기 자연스러운 효과 찾아보기 */
+.gnb nav ul li a:hover {
+    color: #333;
+}
+
+.gnb nav ul li a:hover::after {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+
+/* 메뉴바  */
+.menu-bar {
+    width: 50px;
+    height: 50px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+/* 햄버거 메뉴 아이콘 스타일 (세 개의 가로줄) */
+.menu-bar div {
+    width: 50px;
+    height: 8px;
+    background-color: #000;
+    margin: 6px 0;
+    border-radius: 5px;
+}
+
+
+
+
+
+/* 홈 화면 home-wrap */
+
+.home-bg {
+    width: 100%;
+    height: 700px;
+    background: url(../img/home_bg_1_1.jpg) no-repeat center / cover;
+    color: #fff;
+}
+
+.home-bg .home-contents {
+    width: 100%;
+    height: 100%;
+
+}
+
+.home-bg .home-contents p {
+    font-size: 60px;
+    font-weight: 900;
+}
+
+.home-bg .home-contents .home-txt-01 {
+    padding-top: 100px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    padding-left: 10%;
+}
+
+.home-bg .home-contents .home-txt-02 {
+    text-transform: uppercase;
+    padding-left: 10%;
+}
+
+.home-bg .home-contents .home-neme {
+    text-align: center;
+    margin-top: 320px;
+}
+
+
+
+
+/* main comon */
+.m-centent .title {
+    width: 100%;
+    height: 100px;
+    font-size: 40px;
+    font-weight: 900;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+}
+
+.portfolio-wrap .title::before {
+    content: '';
+    width: 90%;
+    height: 1px;
+    top: 0px;
+    position: absolute;
+    background-color: #000;
+}
+
+.about-wrap .title::after,
+.portfolio-wrap .title::after {
+    content: '';
+    width: 90%;
+    height: 1px;
+    bottom: 0px;
+    position: absolute;
+    background-color: #000;
+}
+
+
+
+
+
+.sub-title {
+    font-size: 18px;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+
+
+/* about-inner */
+.about-inner {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px 0;
+}
+
+
+
+
+
+.intro .my-img {
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    background: url(../img/me.png) no-repeat center / cover;
+    margin-bottom: 30px;
+}
+
+.intro>p {
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.intro .ambition {
+    margin: 30px 0;
+}
+
+.intro .keyword {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+
+/* education 학력 */
+.education {
+    font-size: 14px;
+}
+
+.data,
+.txt {
+    margin-bottom: 5px;
+}
+
+.e-last01 {
+    margin-bottom: 20px;
+}
+
+.e-last02 {
+    margin-bottom: 50px;
+}
+
+/* certificate 자격증 */
+.certificate {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* history 경력, 활용프로그램 */
+.history {
+    font-size: 14px;
+}
+
+
+/* 활용프로그램 아이콘 */
+.icon01 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.icon-bg {
+    width: 40px;
+    height: 40px;
+}
+
+.icon-html {
+    background: url(../img/html.png) no-repeat center / cover;
+}
+
+.icon-css {
+    background: url(../img/css.png) no-repeat center / cover;
+}
+
+.icon-ps {
+    background: url(../img/photoshop.png) no-repeat center / cover;
+}
+
+.icon-ai {
+    background: url(../img/ai.png) no-repeat center / cover;
+}
+
+.icon-figma {
+    background: url(../img/figma.png) no-repeat center / cover;
+}
+
+.icon-epub {
+    background: url(../img/EPUB.png) no-repeat center / cover;
+}
+
+.icon-ad {
+    background: url(../img/pr.png) no-repeat center / cover;
+}
+
+.icon-pr {
+    background: url(../img/xd.png) no-repeat center / cover;
+}
+
+
+
+/* portfolio / 작업물 */
+.port_wrap {
+    width: 100%;
+    margin: auto;
+}
+
+.port-item-inner {
+    width: 90%;
+    padding-top: 20px;
+    margin: auto;
+}
+
+
+/* swiper / 스와이퍼 */
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+/* 작업물 영역*/
+.port-img-box {
+    width: 100%;
+    height: 350px;
+}
+
+.port-img-box:hover {
+    filter: brightness(0.8);
+    transition: all 400ms;
+    border-radius: 20px;
+}
+
+.sw-centent01 {
+    background: url(../img/dog_site.png) no-repeat center / cover;
+}
+
+.sw-centent02 {
+    background: url(../img/bienglo.png) no-repeat center / cover;
+}
+
+.sw-centent03 {
+    background: url(../img/port2.jpg) no-repeat center / cover;
+}
+
+.sw-centent04 {
+    background: url(../img/port4.jpg) no-repeat center / cover;
+}
+
+
+.centent-stitle {
+    font-size: 20px;
+    font-weight: 900;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.centent-txt {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+footer {
+    width: 100%;
+    height: 100px;
+    margin-top: 20px;
+    background: #000;
+    color: #fff;
+    text-align: center;
+}
+
+footer p:first-child {
+    padding-top: 40px;
+}
+
+footer p {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+
+
+
+/* 탑버튼 */
+
+#top-btn {
+    /* display: none; */
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    z-index: 999;
+    background-color: rgb(68, 4, 71);
+    outline: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+
+}
+
+
+
+
+
+/* 분기점 */
+/*노트북 & PC : 1024px-*/
+/* @media all and (min-width:1024px) {
+    style입력
+} */
+
+/*태블릿 가로, 세로 : 768px-1023px*/
+@media all and (min-width:768px) and (max-width:1023px) {
+
+    /* 메뉴 폰트 사이즈 */
+    .gnb nav ul li a {
+        font-size: 18px;
+    }
+
+    /* 홈 이미지 */
+    .home-bg {
+        height: 400px;
+    }
+
+
+
+    /* 홈 텍스트 사이즈 */
+    .home-bg .home-contents p {
+        font-size: 40px;
+    }
+
+    .home-bg .home-contents .home-neme {
+        text-align: center;
+        margin-top: 120px;
+    }
+
+
+    /* about-inner */
+    .about-inner {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .intro .my-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .intro>p {
+        font-size: 16px;
+        font-weight: 900;
+        margin-bottom: 10px;
+    }
+
+
+    .intro .keyword {
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+
+    /* education 학력 */
+    .education {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+
+    .data,
+    .txt {
+        margin-bottom: 5px;
+    }
+
+
+    /* history 경력, 활용프로그램 */
+    .history {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+
+
+    .e-last01 {
+        margin-bottom: 15px;
+    }
+
+
+    /* 메인 */
+
+    /* main comon */
+    .m-centent .title {
+        font-size: 30px;
+        font-weight: 900;
+    }
+
+    .sub-title {
+        font-size: 16px;
+        font-weight: 900;
+        margin-bottom: 24px;
+        margin-top: 20px;
+    }
+
+    .port-img-box {
+        width: 100%;
+        height: 300px;
+    }
+
+}
+
+/*모바일 가로, 세로 : -767px*/
+@media all and (max-width:767px) {
+
+
+    /* 헤더 */
+    .header-inner {
+        width: 90%;
+    }
+
+    .logo a {
+        margin-left: 20px;
+        font-size: 20px;
+    }
+
+    .gnb nav ul {
+        display: none;
+    }
+
+
+
+
+    /* 홈화면 배경 */
+    .home-bg {
+        height: 300px;
+    }
+
+    /* 홈 텍스트 사이즈 */
+    .home-bg .home-contents p {
+        font-size: 25px;
+    }
+
+    .home-bg .home-contents .home-txt-01 {
+        padding-top: 50px;
+        padding-bottom: 10px;
+    }
+
+    .home-bg .home-contents .home-neme {
+        text-align: center;
+        margin-top: 130px;
+    }
+
+
+    /* 소개부분 */
+    /* about-inner */
+    .about-inner {
+        width: 90%;
+        padding: 10px;
+        display: block;
+        text-align: center;
+    }
+
+    .intro .my-img {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+        margin-bottom: 30px;
+    }
+
+    .intro>p {
+        font-size: 14px;
+        font-weight: 900;
+        margin-bottom: 10px;
+    }
+
+
+    .intro .keyword {
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+
+
+    /* education 학력 */
+    .education {
+        font-size: 12px;
+        padding: 20px 10px;
+    }
+
+    .data,
+    .txt {
+        margin-bottom: 5px;
+    }
+
+    /* history 경력, 활용프로그램 */
+    .history {
+        font-size: 12px;
+        padding: 0 10px;
+    }
+
+
+    .e-last01 {
+        margin-bottom: 15px;
+    }
+
+    .e-last02 {
+        margin-bottom: 50px;
+    }
+
+
+    .history>ul>.e-last01 {
+        margin-bottom: 20px;
+    }
+
+
+    /* 활용프로그램 아이콘박스 */
+    .icon-inner {
+        width: 90%;
+        margin: auto;
+    }
+
+
+    /* 메인 */
+
+    /* main comon */
+    .m-centent .title {
+        font-size: 24px;
+        font-weight: 900;
+    }
+
+    .sub-title {
+        font-size: 16px;
+        font-weight: 900;
+        margin-bottom: 18px;
+        margin-top: 20px;
+    }
+
+
+
+
+
+    /* 작업물 영역*/
+    .port-img-box {
+        width: 100%;
+        height: 500px;
+    }
+
+    .centent-stitle {
+        font-size: 14px;
+        font-weight: 900;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .centent-txt {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+
+
+    /* 푸터 */
+
+    footer p {
+        font-size: 10px;
+        margin-bottom: 5px;
+    }
+
+
+
+
+
+    /* 탑버튼 */
+
+    #top-btn {
+        /* display: none; */
+        position: fixed;
+        bottom: 20px;
+        right: 0px;
+        z-index: 999;
+        background-color: rgb(68, 4, 71);
+        outline: none;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #ffffff;
+    }
+
+
+    /* top 버튼 수평 스크롤 없애기 */
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+
+}
